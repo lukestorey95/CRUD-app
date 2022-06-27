@@ -1,0 +1,17 @@
+{% extends "main.html" %} {% block content %}
+<h1>Note</h1>
+
+<div id="<%= dom_id note %>" class="card" style="width: 18rem">
+  <div class="card-body">
+    <p class="card-text">{{ note.note }}</p>
+
+    <a class="btn btn-primary" href="{% url 'update-note' note.id %}">Edit</a>
+
+    <form method="POST" action="/delete-note/{{note.id}}/">
+      {% csrf_token %}
+      <input class="btn btn-primary" type="submit" value="Delete" />
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "main.html" %} {% block content %}
+<h1>Note</h1>
+
+<div>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="mb-3 needs-validation">{{ form }}</div>
+
+    <div>
+      <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
