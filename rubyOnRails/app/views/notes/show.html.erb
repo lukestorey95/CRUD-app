@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @note %>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+
+  <%= link_to "Edit", edit_note_path(@note), class:"btn btn-primary" %>
+  
+  <%= button_to "Delete", @note, method: :delete, class:"btn btn-primary" %>
+
+</div>
+
+<%= link_to "Back to notes", notes_path %>

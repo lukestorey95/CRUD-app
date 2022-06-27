@@ -1,0 +1,24 @@
+
+<%= form_with(model: note) do |form| %>
+  <% if note.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+        <% note.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-floating mb-3 needs-validation">
+    <%= form.text_field :note, class:"form-control", required:true, placeholder:"note" %>
+    <label>What do you want to remember?</label>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-primary"%>
+  </div>
+<% end %>
+

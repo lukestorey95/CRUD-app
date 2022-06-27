@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Notes</h1>
+
+<div id="notes" class="row">
+  <% @notes.each do |note| %>
+    <div class="col-sm-6">
+      <%= render note %>
+      <p>
+        <%= link_to "Show note", note , class:"btn btn-primary" %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New note", new_note_path %>
+
